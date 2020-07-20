@@ -6,15 +6,15 @@
 <body>
 <h1>ログインページ</h1>
 
-<form method="post" action="">
+<form method="post" action="/login">
     <label for="">メールアドレス</label>
-    <p><input type="text" placeholder="exsample@mail.com"></p>
+    <p><input type="text" name="user_name" placeholder="exsample@mail.com"></p>
     <label for="">パスワード</label>
-    <p><input type="text" placeholder="最低6文字必要です"></p>
+    <p><input type="text" name="user_pass" placeholder="最低6文字必要です"></p>
 
     <p><button type="submit">ログイン</button></p>
      
-    <p>新しくアカウントを作る<a href="">アカウントを新規作成</a></p>
+    <p>新しくアカウントを作る<a href="/">アカウントを新規作成</a></p>
 </form>
 </body>
 </html>

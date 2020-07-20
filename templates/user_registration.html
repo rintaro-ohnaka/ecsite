@@ -6,17 +6,26 @@
 <body>
 <h1>アカウント新規作成ページ</h1>
 
-<form method="post" action="">
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form method="post" action="/create_user">
     <label for="">名前</label>
-    <p><input type="text" placeholder="大中倫太郎"></p>
-    <label for="">メールアドレス</label>
-    <p><input type="text" placeholder="exsample@mail.com"></p>
+    <p><input type="text" name="user_name" placeholder="大中倫太郎"></p>
+    <!-- <label for="">メールアドレス</label>
+    <p><input type="text" placeholder="exsample@mail.com"></p> -->
     <label for="">パスワード</label>
-    <p><input type="text" placeholder="最低6文字必要です"></p>
+    <p><input type="text" name="user_pass" placeholder="最低6文字必要です"></p>
 
     <p><button type="submit">アカウントを作成</button></p>
-
-    <p>すでにアカウントをお持ちですか？<a href="">ログイン</a></p>
 </form>
+<p>すでにアカウントをお持ちですか？<a href="/show_login_page">ログイン</a></p>
 </body>
 </html>
