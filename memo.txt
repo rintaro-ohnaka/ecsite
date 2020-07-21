@@ -1,1 +1,9 @@
 ここにはプログラムを作る際に使ったことなどを簡単にメモしておく。
+
+仮想環境
+python3 -m venv venv
+. venv/bin/activate
+
+デバッグモード
+export FLASK_APP=app
+export FLASK_ENV=development

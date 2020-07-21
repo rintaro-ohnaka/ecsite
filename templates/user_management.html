@@ -4,6 +4,7 @@
 <title>ユーザー管理ページ</title>
 </head>
 <body>
+<h1>ユーザー管理ページ</h1>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -21,5 +22,9 @@
         <p>パスワード：{{ profile.password }}</p>
     {% endfor %}
 {% endif %}
+
+<form action="/show_login_page">
+    <button type="submit">ログインページに戻る</button>
+</form>
 </body>
 </html>
